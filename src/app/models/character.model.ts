@@ -1,7 +1,8 @@
 export interface Character {
   uid: string;
   name: string;
-  url: string; 
+  url: string;
+  details: CharacterDetails
 }
 
 export interface CharacterDetails {
@@ -10,7 +11,4 @@ export interface CharacterDetails {
   gender: string;
   height: string;
   mass: string;
-  skin_color: string;
-  hair_color: string;
-  eye_color: string;
 }

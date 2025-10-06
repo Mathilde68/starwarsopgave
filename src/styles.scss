@@ -9,7 +9,7 @@
 html {
   @include mat.theme((
     color: (
-      primary: mat.$magenta-palette,
+      primary: mat.$violet-palette,
       tertiary: mat.$violet-palette,
     ),
     typography: Roboto,
@@ -36,18 +36,60 @@ body {
 /* You can add global styles to this file, and also import other style files */
 
 html, body { height: 100%; }
-body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif;
+  background-image: url(../public/img/starbg.jpg);
+   background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-position: center;
+  background-size: cover;}
+
+
+
 
 
 main{
   margin: 0 auto;
+  
 }
+
 .content{
   margin: 3rem 2rem;
 }
 
-.flex-list{
+.character-list{
   display: flex;
-  flex-wrap: wrap;
-  gap:1rem
+   flex-wrap: wrap;
+}
+
+
+.card-container {
+  display: flex;
+  flex: 1 1 20rem;
+  min-width: 10rem;
+}
+
+mat-card[appearance='filled'] {
+  min-height: 10rem;
+  background-color: rgb(36, 36, 54);
+  width: 100%;
+  margin: 0.5rem;
+}
+
+mat-card[appearance='filled']:hover {
+  background-color: rgb(35, 35, 66);
+}
+
+.female{
+  color: rgb(238, 118, 118);
+}
+
+.male{
+  color: rgb(109, 138, 241);
+}
+
+@media only screen and (min-width: 800px) { 
+.card-container {
+  max-width: 25%;
+}
+
 }
