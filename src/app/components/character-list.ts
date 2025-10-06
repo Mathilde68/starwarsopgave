@@ -8,9 +8,10 @@ import {MatProgressSpinnerModule} from '@angular/material/progress-spinner';
   selector: 'character-list',
   imports: [CharacterCard, MatProgressSpinnerModule],
   template: `
-    <h1>List of StarWars characters</h1>
+ 
+    <h2>List of StarWars characters</h2>
     
-   
+    <section class='flex-list'>
       @for (character of characters; track character.uid) 
         {  @if (characters.length > 0){
           <character-card [character]="character"></character-card>}
@@ -21,7 +22,7 @@ import {MatProgressSpinnerModule} from '@angular/material/progress-spinner';
         }@empty {
           <p>There was no characters found</p>
         }
-    
+    </section>
   `,
 })
 export class CharacterList implements OnInit {

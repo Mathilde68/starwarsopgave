@@ -37,3 +37,17 @@ body {
 
 html, body { height: 100%; }
 body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+
+
+main{
+  margin: 0 auto;
+}
+.content{
+  margin: 3rem 2rem;
+}
+
+.flex-list{
+  display: flex;
+  flex-wrap: wrap;
+  gap:1rem
+}

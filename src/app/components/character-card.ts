@@ -1,7 +1,7 @@
 import { Component, Input, OnInit, NgModule } from "@angular/core";
 import { APIService } from "../services/api-service";
 import { Character, CharacterDetails } from "../models/character.model";
-import { MatCard } from "@angular/material/card";
+import { MatCard, MatCardHeader, MatCardTitle, MatCardContent } from "@angular/material/card";
 import {MatProgressSpinnerModule} from '@angular/material/progress-spinner';
 
 
@@ -9,15 +9,18 @@ import {MatProgressSpinnerModule} from '@angular/material/progress-spinner';
 
 @Component({
   selector: 'character-card',
-  imports: [MatCard, MatProgressSpinnerModule],
+  imports: [MatCard, MatProgressSpinnerModule, MatCardHeader, MatCardTitle,  MatCardContent],
   template: `  
-  <mat-card appearance='outlined' style="width: 20rem;">
-    <h1>{{ character.name }}</h1>
+  <mat-card appearance='filled' style="width: 100%; min-width:20rem; height: 10rem;">
+    <mat-card-header>
+    <mat-card-title>{{ character.name }}</mat-card-title>
+    </mat-card-header>
     @if (characterDetails) {
-      <article>
-        <p>{{ characterDetails.gender }}</p>
-        <p>{{ characterDetails.birth_year }}</p>
-      </article>
+      <mat-card-content>
+        <p>Gender: {{ characterDetails.gender }}</p>
+        <p>Birth year: {{ characterDetails.birth_year }}</p>
+        <p>Height: {{ characterDetails.height }}</p>
+      </mat-card-content>
     } @else {
     <mat-spinner [diameter]="10" />
 
