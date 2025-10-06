@@ -21,6 +21,7 @@ import { ReactiveFormsModule } from "@angular/forms";
 export class GenderFilter {
   genderFilter = new FormControl('all');
 
+  // Output for emitting event, enables the parent to listening on changes in value
   @Output() filterChanged = new EventEmitter<any>();
 
   constructor() {

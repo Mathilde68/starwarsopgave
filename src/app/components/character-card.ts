@@ -1,4 +1,4 @@
-import { Component, Input} from "@angular/core";
+import { Component, Input } from "@angular/core";
 import { Character } from "../models/character.model";
 import { MatCard, MatCardHeader, MatCardTitle, MatCardContent } from "@angular/material/card";
 
@@ -8,7 +8,7 @@ import { MatCard, MatCardHeader, MatCardTitle, MatCardContent } from "@angular/m
 
 @Component({
   selector: 'character-card',
-  imports: [MatCard, MatCardHeader, MatCardTitle,  MatCardContent],
+  imports: [MatCard, MatCardHeader, MatCardTitle, MatCardContent],
   template: `  
   <mat-card appearance='filled'>
     <mat-card-header>
@@ -19,19 +19,14 @@ import { MatCard, MatCardHeader, MatCardTitle, MatCardContent } from "@angular/m
         <p>Birth year: {{ character.details.birth_year }}</p>
         <p>Height: {{ character.details.height }}</p>
         <p>Mass: {{ character.details.mass }}</p>
-      
-        
       </mat-card-content>
     
   </mat-card>
   `,
 })
 
-export class CharacterCard  {
+export class CharacterCard {
   //Getting the Character as Input from list component (parent)
- @Input() character!: Character;
+  @Input() character!: Character;
 
-
-
- 
 }

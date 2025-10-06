@@ -20,6 +20,7 @@ import { ReactiveFormsModule } from "@angular/forms";
 export class BBYFilter {
   bbyFilter = new FormControl('all');
 
+// Output for emitting event, enables the parent to listening on changes in value
   @Output() filterChanged = new EventEmitter<any>();
 
   constructor() {

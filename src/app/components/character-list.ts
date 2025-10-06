@@ -34,7 +34,7 @@ import { BBYFilter } from "./BBY-filter";
   `,
 })
 export class CharacterList implements OnInit {
- loading = true;
+  loading = true;
   characterIds: Character[] = [];
   characters: Character[] = [];
   filteredCharacters: Character[] = [];
@@ -48,21 +48,21 @@ export class CharacterList implements OnInit {
     if (gender == "all") {
       this.filteredCharacters = this.characters;
     } else {
-       this.filteredCharacters = this.characters.filter(char => 
-       char.details?.gender === gender );
+      this.filteredCharacters = this.characters.filter(char =>
+        char.details?.gender === gender);
     }
 
   }
 
 
   // Filtering between birth year 20 - 40
-   onBBYFilterChanged(filter: string) {
+  onBBYFilterChanged(filter: string) {
 
     if (filter == 'all') {
       this.filteredCharacters = this.characters;
     } else {
-       this.filteredCharacters = this.filteredCharacters.filter(char => 
-       char.details?.birth_year > '20BBY' && char.details?.birth_year < '40BBY');
+      this.filteredCharacters = this.filteredCharacters.filter(char =>
+        char.details?.birth_year > '20BBY' && char.details?.birth_year < '40BBY');
     }
 
   }
@@ -72,14 +72,14 @@ export class CharacterList implements OnInit {
     //Subscribe to the getAll to get all uid's
     this.apiService.getAll().subscribe((data) => {
       this.characterIds = data.results;
-      
+
       // Using these uids in for loop to get more details for each character
       for (const char of this.characterIds) {
         this.apiService.get(char.uid).subscribe((data) => {
           const details = data.result.properties;
 
-         
-          // adding the details to the character
+
+          // Adding the details to the character
           const fullCharacter: any = {
             ...char,
             details: details,
@@ -87,9 +87,9 @@ export class CharacterList implements OnInit {
           this.characters.push(fullCharacter);
 
           // For stopping the loading spinner
-          this.loading=false;
+          this.loading = false;
 
-          //Put the chatracters in filtercharacters, in order to display
+          // Put the characters in filtercharacters, in order to display
           this.filteredCharacters = this.characters;
         });
       }
