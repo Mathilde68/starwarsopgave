@@ -15,9 +15,9 @@ import { Character, CharacterDetails } from "../models/character.model";
     return this.http.get<{ result: { properties: CharacterDetails } }>(`${this.baseUrl}/${uid}`);
   }
 
-getAll(): Observable<{ results: Character[] }> {
-return this.http.get<any>(this.baseUrl);
- }
+  getAll(): Observable<{ results: Character[] }> {
+  return this.http.get<any>(this.baseUrl);
+  }
 
 
  

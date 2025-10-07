@@ -22,8 +22,7 @@ import { BBYFilter } from "./BBY-filter";
     
     <section class='character-list'>
     @if (loading){
-      <p>Loading list</p>
-          <mat-spinner  [diameter]="30" /> 
+      <mat-spinner  [diameter]="30"  /> 
      }@else {
        @for (character of filteredCharacters; track character.uid) {
           <character-card [character]="character" class="card-container"></character-card> 
@@ -80,7 +79,7 @@ export class CharacterList implements OnInit {
 
 
           // Adding the details to the character
-          const fullCharacter: any = {
+          const fullCharacter: Character = {
             ...char,
             details: details,
           };
